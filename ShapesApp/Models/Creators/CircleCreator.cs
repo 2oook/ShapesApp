@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShapesApp.Models.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,9 +16,9 @@ namespace ShapesApp.Models.Creators
         /// Метод для создания окружности
         /// </summary>
         /// <returns>Объект окружности</returns>
-        public override Shape CreateShape()
+        public override Shape CreateShape(IDrawStrategy drawStrategy)
         {
-            return new Circle();
+            return new Circle(drawStrategy);
         }
     }
 }

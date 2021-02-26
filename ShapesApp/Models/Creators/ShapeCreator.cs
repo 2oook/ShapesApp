@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShapesApp.Models.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,6 @@ namespace ShapesApp.Models.Creators
         /// Метод для создания формы
         /// </summary>
         /// <returns>Объект формы</returns>
-        public abstract Shape CreateShape();
+        public abstract Shape CreateShape(IDrawStrategy drawStrategy);
     }
 }

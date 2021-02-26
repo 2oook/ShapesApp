@@ -12,6 +12,11 @@ namespace ShapesApp.Models
     /// </summary>
     class Circle : Shape
     {
+        public Circle(IDrawStrategy drawStrategy)
+        {
+            DrawStrategy = drawStrategy;
+        }
+
         /// <summary>
         /// Высота
         /// </summary>

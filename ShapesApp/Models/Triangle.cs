@@ -13,6 +13,11 @@ namespace ShapesApp.Models
     /// </summary>
     class Triangle : Shape
     {
+        public Triangle(IDrawStrategy drawStrategy)
+        {
+            DrawStrategy = drawStrategy;
+        }
+
         /// <summary>
         /// Коллекция точек описывающих форму треугольника
         /// </summary>

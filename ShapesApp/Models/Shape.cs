@@ -16,7 +16,7 @@ namespace ShapesApp.Models
         /// <summary>
         /// Объект стратегии отрисовки фигуры
         /// </summary>
-        public IDrawStrategy DrawStrategy { get; set; }
+        protected IDrawStrategy DrawStrategy { get; set; }
 
         /// <summary>
         /// Цвет линии контура
@@ -27,5 +27,13 @@ namespace ShapesApp.Models
         /// Толщина линии контура
         /// </summary>
         public double StrokeThickness { get; set; }
+
+        /// <summary>
+        /// Метод для отрисовки фигуры
+        /// </summary>
+        public void Draw() 
+        {
+            DrawStrategy.Draw();
+        }
     }
 }

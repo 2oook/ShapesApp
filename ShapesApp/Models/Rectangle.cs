@@ -12,6 +12,11 @@ namespace ShapesApp.Models
     /// </summary>
     class Rectangle : Shape
     {
+        public Rectangle(IDrawStrategy drawStrategy)
+        {
+            DrawStrategy = drawStrategy;
+        }
+
         /// <summary>
         /// Высота
         /// </summary>

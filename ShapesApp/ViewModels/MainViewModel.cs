@@ -61,16 +61,18 @@ namespace ShapesApp.ViewModels
             var rectangleCreator = new RectangleCreator();
             var triangleCreator = new TriangleCreator();
 
+            var drawStrategy = new ConcreteDrawStrategy();
+
             var shapes = new List<Shape>()
             {
-                circleCreator.CreateShape(),
-                rectangleCreator.CreateShape(),
-                triangleCreator.CreateShape()
+                circleCreator.CreateShape(drawStrategy),
+                rectangleCreator.CreateShape(drawStrategy),
+                triangleCreator.CreateShape(drawStrategy)
             };
 
             foreach (var shape in shapes)
             {
-
+                shape.Draw();
             }
         }
 
