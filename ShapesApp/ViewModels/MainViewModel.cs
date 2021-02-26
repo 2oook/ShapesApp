@@ -1,4 +1,6 @@
 ﻿using GalaSoft.MvvmLight.Command;
+using ShapesApp.Models;
+using ShapesApp.Models.Creators;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,9 +52,26 @@ namespace ShapesApp.ViewModels
             ShowShapesCommand = new RelayCommand(ShowShapes);
         }
 
+        /// <summary>
+        /// Метод для отображения всех фигур
+        /// </summary>
         void ShowShapes() 
         {
+            var circleCreator = new CircleCreator();
+            var rectangleCreator = new RectangleCreator();
+            var triangleCreator = new TriangleCreator();
 
+            var shapes = new List<Shape>()
+            {
+                circleCreator.CreateShape(),
+                rectangleCreator.CreateShape(),
+                triangleCreator.CreateShape()
+            };
+
+            foreach (var shape in shapes)
+            {
+
+            }
         }
 
         /// <summary>

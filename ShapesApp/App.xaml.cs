@@ -16,10 +16,11 @@ namespace ShapesApp
             base.OnStartup(e);
 
             // Создать главное окно
-            var mainWindow = new MainWindow();
+            var mainWindow = new MainWindow();       
             // Создать главную VM
-            var mainEntryPoint = new MainViewModel();
+            var mainEntryPoint = new MainViewModel();          
             mainWindow.DataContext = mainEntryPoint;
+
             // Отобразить окно
             mainWindow.Show();
         }

@@ -17,7 +17,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Button Grid.Row="0" Grid.Column="0" Width="100" Command="{Binding ShowShapesCommand}">Показать фигуры</Button>
-        <Canvas Grid.Row="1" Grid.ColumnSpan="2"/>
+        <Canvas x:Name="canvas" Grid.Row="1" Grid.ColumnSpan="2" />
     </Grid>   
    
 </Window>

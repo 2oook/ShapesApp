@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace ShapesApp.Models.Interfaces
 {
-    interface IDrawStrategy
+    /// <summary>
+    /// Интерфейс стратегии отрисовки фигуры
+    /// </summary>
+    public interface IDrawStrategy
     {
         void Draw();
     }
