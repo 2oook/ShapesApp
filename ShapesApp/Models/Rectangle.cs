@@ -1,4 +1,5 @@
 ﻿using ShapesApp.Controls;
+using ShapesApp.Models.Drawable.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +11,15 @@ namespace ShapesApp.Models
     /// <summary>
     /// Класс представляющий окружность
     /// </summary>
-    class Rectangle : Shape
+    public class Rectangle : Shape
     {
+        public Rectangle(IRectangleDrawStrategy _rectangleDrawStrategy)
+        {
+            rectangleDrawStrategy = _rectangleDrawStrategy;
+        }
+
+        private IRectangleDrawStrategy rectangleDrawStrategy;
+
         /// <summary>
         /// Высота
         /// </summary>
@@ -22,17 +30,13 @@ namespace ShapesApp.Models
         /// </summary>
         public double Width { get; set; } = 200;
 
+        /// <summary>
+        /// Метод для создания отображаемого объекта
+        /// </summary>
+        /// <returns>Отображаемый объект прямоугольника</returns>
         public override object CreateDrawableObject()
         {
-            var control = new RectangleControl();
-
-            control.rect.Height = Height;
-            control.rect.Width = Width;
-            control.rect.Stroke = Stroke;
-            control.rect.Fill = BackgroundColor;
-            control.rect.StrokeThickness = StrokeThickness;
-
-            return control;
+            return rectangleDrawStrategy.CreateDrawableRectangle(this);
         }
     }
 }

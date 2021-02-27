@@ -33,6 +33,10 @@ namespace ShapesApp.Models
         /// </summary>
         public Point Point { get; set; }
 
+        /// <summary>
+        /// Метод для создания отображаемого объекта
+        /// </summary>
+        /// <returns>Отображаемый объект</returns>
         public abstract object CreateDrawableObject();
     }
 }

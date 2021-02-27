@@ -85,6 +85,12 @@
     <Compile Include="Models\Creators\CircleCreator.cs" />
     <Compile Include="Models\Creators\RectangleCreator.cs" />
     <Compile Include="Models\Creators\TriangleCreator.cs" />
+    <Compile Include="Models\Drawable\CircleDrawStrategy.cs" />
+    <Compile Include="Models\Drawable\Interfaces\ICircleDrawStrategy.cs" />
+    <Compile Include="Models\Drawable\Interfaces\IRectangleDrawStrategy.cs" />
+    <Compile Include="Models\Drawable\Interfaces\ITriangleDrawStrategy.cs" />
+    <Compile Include="Models\Drawable\RectangleDrawStrategy.cs" />
+    <Compile Include="Models\Drawable\TriangleDrawStrategy.cs" />
     <Compile Include="Models\Rectangle.cs" />
     <Compile Include="Models\Shape.cs" />
     <Compile Include="Models\Creators\ShapeCreator.cs" />
@@ -142,8 +148,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\Interfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

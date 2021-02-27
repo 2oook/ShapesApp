@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ShapesApp.Models.Drawable;
+using ShapesApp.Models.Drawable.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,13 +14,23 @@ namespace ShapesApp.Models.Creators
     /// </summary>
     class CircleCreator : ShapeCreator
     {
+        public CircleCreator(ICircleDrawStrategy _circleDrawStrategy)
+        {
+            circleDrawStrategy = _circleDrawStrategy;
+        }
+
+        /// <summary>
+        ///  Стратегия отображения окружности
+        /// </summary>
+        private ICircleDrawStrategy circleDrawStrategy;
+
         /// <summary>
         /// Метод для создания окружности
         /// </summary>
         /// <returns>Объект окружности</returns>
         public override Shape CreateShape(double x, double y)
         {
-            return new Circle() { Point = new Point() { X = x, Y = y } };
+            return new Circle(circleDrawStrategy) { Point = new Point() { X = x, Y = y } };
         }
     }
 }

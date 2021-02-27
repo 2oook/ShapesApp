@@ -1,4 +1,6 @@
 ﻿using ShapesApp.Controls;
+using ShapesApp.Models.Drawable;
+using ShapesApp.Models.Drawable.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +12,15 @@ namespace ShapesApp.Models
     /// <summary>
     /// Класс представляющий окружность
     /// </summary>
-    class Circle : Shape
+    public class Circle : Shape
     {
+        public Circle(ICircleDrawStrategy _circleDrawStrategy)
+        {
+            circleDrawStrategy = _circleDrawStrategy;
+        }
+
+        ICircleDrawStrategy circleDrawStrategy { get; set; }
+
         /// <summary>
         /// Высота
         /// </summary>
@@ -22,17 +31,13 @@ namespace ShapesApp.Models
         /// </summary>
         public double Width { get; set; } = 100;
 
+        /// <summary>
+        /// Метод для создания отображаемого объекта
+        /// </summary>
+        /// <returns>Отображаемый объект окружности</returns>
         public override object CreateDrawableObject()
         {
-            var control = new CircleControl();
-
-            control.circle.Height = Height;
-            control.circle.Width = Width;
-            control.circle.Stroke = Stroke;
-            control.circle.Fill = BackgroundColor;
-            control.circle.StrokeThickness = StrokeThickness;
-
-            return control;
+            return circleDrawStrategy.CreateDrawableCircle(this);          
         }
     }
 }

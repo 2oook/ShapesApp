@@ -1,4 +1,5 @@
 ﻿using ShapesApp.Controls;
+using ShapesApp.Models.Drawable.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,8 +15,16 @@ namespace ShapesApp.Models
     /// <summary>
     /// Класс представляющий треугольник
     /// </summary>
-    class Triangle : Shape
+    public class Triangle : Shape
     {
+        public Triangle(ITriangleDrawStrategy _triangleDrawStrategy)
+        {
+            triangleDrawStrategy = _triangleDrawStrategy;
+        }
+
+
+        private ITriangleDrawStrategy triangleDrawStrategy;
+
         /// <summary>
         /// Коллекция точек описывающих форму треугольника
         /// </summary>
@@ -27,16 +36,13 @@ namespace ShapesApp.Models
             new Point(){ X = 50, Y = 0 },
         };
 
+        /// <summary>
+        /// Метод для создания отображаемого объекта
+        /// </summary>
+        /// <returns>Отображаемый объект треугольника</returns>
         public override object CreateDrawableObject()
         {
-            var control = new TriangleControl();
-
-            control.triangle.Points = Points;
-            control.triangle.Stroke = Stroke;
-            control.triangle.Fill = BackgroundColor;
-            control.triangle.StrokeThickness = StrokeThickness;
-
-            return control;
+            return triangleDrawStrategy.CreateDrawableTriangle(this);
         }
     }
 }

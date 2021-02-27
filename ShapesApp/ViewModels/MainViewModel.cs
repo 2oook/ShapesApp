@@ -2,6 +2,7 @@
 using ShapesApp.Infrastructure;
 using ShapesApp.Models;
 using ShapesApp.Models.Creators;
+using ShapesApp.Models.Drawable;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -54,15 +55,15 @@ namespace ShapesApp.ViewModels
         /// </summary>
         void ShowShapes() 
         {
-            var circleCreator = new CircleCreator();
-            var rectangleCreator = new RectangleCreator();
-            var triangleCreator = new TriangleCreator();
+            var circleCreator = new CircleCreator(new CircleDrawStrategy());
+            var rectangleCreator = new RectangleCreator(new RectangleDrawStrategy());
+            var triangleCreator = new TriangleCreator(new TriangleDrawStrategy());
 
             var shapes = new List<Shape>()
             {
                 circleCreator.CreateShape(10, 20),
                 rectangleCreator.CreateShape(150, 50),
-                triangleCreator.CreateShape(290,40)
+                triangleCreator.CreateShape(370,40)
             };
 
             foreach (var shape in shapes)

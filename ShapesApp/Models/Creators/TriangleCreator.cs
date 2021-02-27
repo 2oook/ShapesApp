@@ -1,4 +1,4 @@
-﻿
+﻿using ShapesApp.Models.Drawable.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,13 +13,23 @@ namespace ShapesApp.Models.Creators
     /// </summary>
     class TriangleCreator : ShapeCreator
     {
+        public TriangleCreator(ITriangleDrawStrategy _triangleDrawStrategy)
+        {
+            triangleDrawStrategy = _triangleDrawStrategy;
+        }
+
+        /// <summary>
+        ///  Стратегия отображения треугольника
+        /// </summary>
+        private ITriangleDrawStrategy triangleDrawStrategy;
+
         /// <summary>
         /// Метод для создания треугольника
         /// </summary>
         /// <returns>Объект треугольника</returns>
         public override Shape CreateShape(double x, double y)
         {
-            return new Triangle() { Point = new Point() { X = x, Y = y } };
+            return new Triangle(triangleDrawStrategy) { Point = new Point() { X = x, Y = y } };
         }
     }
 }
