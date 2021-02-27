@@ -1,10 +1,4 @@
-﻿using ShapesApp.Controls;
-using ShapesApp.Models.Drawable.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ShapesApp.Models.Drawable.Interfaces;
 
 namespace ShapesApp.Models
 {
@@ -18,6 +12,9 @@ namespace ShapesApp.Models
             rectangleDrawStrategy = _rectangleDrawStrategy;
         }
 
+        /// <summary>
+        /// Ссылка на объект стратегии отображения прямоугольника
+        /// </summary>
         private IRectangleDrawStrategy rectangleDrawStrategy;
 
         /// <summary>

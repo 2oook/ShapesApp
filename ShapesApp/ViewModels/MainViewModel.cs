@@ -3,12 +3,8 @@ using ShapesApp.Infrastructure;
 using ShapesApp.Models;
 using ShapesApp.Models.Creators;
 using ShapesApp.Models.Drawable;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace ShapesApp.ViewModels
@@ -53,7 +49,7 @@ namespace ShapesApp.ViewModels
         /// <summary>
         /// Метод для отображения всех фигур
         /// </summary>
-        void ShowShapes() 
+        void ShowShapes()
         {
             var circleCreator = new CircleCreator(new CircleDrawStrategy());
             var rectangleCreator = new RectangleCreator(new RectangleDrawStrategy());

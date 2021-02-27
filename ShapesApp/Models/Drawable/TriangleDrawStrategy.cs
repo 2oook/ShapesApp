@@ -1,15 +1,18 @@
 ﻿using ShapesApp.Controls;
 using ShapesApp.Models.Drawable.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ShapesApp.Models.Drawable
 {
+    /// <summary>
+    /// Стратегия отображения треугольника
+    /// </summary>
     public class TriangleDrawStrategy : ITriangleDrawStrategy
     {
+        /// <summary>
+        /// Метод для создания отображаемого объекта треугольника
+        /// </summary>
+        /// <param name="triangle">Объект треугольника<param>
+        /// <returns>Отображаемый объект</returns>
         public object CreateDrawableTriangle(Triangle triangle)
         {
             var control = new TriangleControl();

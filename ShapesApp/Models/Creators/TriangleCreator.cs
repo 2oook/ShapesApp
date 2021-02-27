@@ -1,9 +1,4 @@
 ﻿using ShapesApp.Models.Drawable.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace ShapesApp.Models.Creators
@@ -19,7 +14,7 @@ namespace ShapesApp.Models.Creators
         }
 
         /// <summary>
-        ///  Стратегия отображения треугольника
+        /// Стратегия отображения треугольника
         /// </summary>
         private ITriangleDrawStrategy triangleDrawStrategy;
 

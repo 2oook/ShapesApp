@@ -1,11 +1,4 @@
-﻿using ShapesApp.Controls;
-using ShapesApp.Models.Drawable;
-using ShapesApp.Models.Drawable.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ShapesApp.Models.Drawable.Interfaces;
 
 namespace ShapesApp.Models
 {
@@ -19,6 +12,9 @@ namespace ShapesApp.Models
             circleDrawStrategy = _circleDrawStrategy;
         }
 
+        /// <summary>
+        /// Ссылка на объект стратегии отображения окружности
+        /// </summary>
         ICircleDrawStrategy circleDrawStrategy { get; set; }
 
         /// <summary>
@@ -37,7 +33,7 @@ namespace ShapesApp.Models
         /// <returns>Отображаемый объект окружности</returns>
         public override object CreateDrawableObject()
         {
-            return circleDrawStrategy.CreateDrawableCircle(this);          
+            return circleDrawStrategy.CreateDrawableCircle(this);
         }
     }
 }

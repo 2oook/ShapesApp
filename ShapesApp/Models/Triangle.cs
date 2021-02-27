@@ -1,13 +1,5 @@
-﻿using ShapesApp.Controls;
-using ShapesApp.Models.Drawable.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ShapesApp.Models.Drawable.Interfaces;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Media;
 
 namespace ShapesApp.Models
@@ -22,13 +14,15 @@ namespace ShapesApp.Models
             triangleDrawStrategy = _triangleDrawStrategy;
         }
 
-
+        /// <summary>
+        /// Ссылка на объект стратегии отображения треугольника
+        /// </summary>
         private ITriangleDrawStrategy triangleDrawStrategy;
 
         /// <summary>
         /// Коллекция точек описывающих форму треугольника
         /// </summary>
-        public PointCollection Points { get; set; } = new PointCollection() 
+        public PointCollection Points { get; set; } = new PointCollection()
         {
             new Point(){ X = 50, Y = 0 },
             new Point(){ X = 0, Y = 100 },

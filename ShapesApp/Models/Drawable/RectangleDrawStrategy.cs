@@ -1,15 +1,18 @@
 ﻿using ShapesApp.Controls;
 using ShapesApp.Models.Drawable.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ShapesApp.Models.Drawable
 {
+    /// <summary>
+    /// Стратегия отображения прямоугольника
+    /// </summary>
     public class RectangleDrawStrategy : IRectangleDrawStrategy
     {
+        /// <summary>
+        /// Метод для создания отображаемого объекта прямоугольника
+        /// </summary>
+        /// <param name="rectangle">Объект прямоугольника<param>
+        /// <returns>Отображаемый объект</returns>
         public object CreateDrawableRectangle(Rectangle rectangle)
         {
             var control = new RectangleControl();

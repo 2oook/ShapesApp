@@ -1,10 +1,4 @@
-﻿using ShapesApp.Models.Drawable;
-using ShapesApp.Models.Drawable.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ShapesApp.Models.Drawable.Interfaces;
 using System.Windows;
 
 namespace ShapesApp.Models.Creators
@@ -20,7 +14,7 @@ namespace ShapesApp.Models.Creators
         }
 
         /// <summary>
-        ///  Стратегия отображения окружности
+        /// Стратегия отображения окружности
         /// </summary>
         private ICircleDrawStrategy circleDrawStrategy;
 
