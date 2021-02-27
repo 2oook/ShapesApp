@@ -79,12 +79,12 @@
     <Compile Include="Controls\TriangleControl.xaml.cs">
       <DependentUpon>TriangleControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\Editor.cs" />
+    <Compile Include="Infrastructure\IEditor.cs" />
     <Compile Include="Models\Circle.cs" />
     <Compile Include="Models\Creators\CircleCreator.cs" />
-    <Compile Include="Models\ConcreteDrawStrategy.cs" />
     <Compile Include="Models\Creators\RectangleCreator.cs" />
     <Compile Include="Models\Creators\TriangleCreator.cs" />
-    <Compile Include="Models\Interfaces\IDrawStrategy.cs" />
     <Compile Include="Models\Rectangle.cs" />
     <Compile Include="Models\Shape.cs" />
     <Compile Include="Models\Creators\ShapeCreator.cs" />
@@ -142,6 +142,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Models\Interfaces\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

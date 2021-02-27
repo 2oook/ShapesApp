@@ -1,4 +1,5 @@
-﻿using ShapesApp.ViewModels;
+﻿using ShapesApp.Infrastructure;
+using ShapesApp.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -20,6 +21,10 @@ namespace ShapesApp
             // Создать главную VM
             var mainEntryPoint = new MainViewModel();          
             mainWindow.DataContext = mainEntryPoint;
+
+            var editor = new Editor();
+            mainWindow.Editor = editor;
+            mainEntryPoint.Editor = editor;
 
             // Отобразить окно
             mainWindow.Show();

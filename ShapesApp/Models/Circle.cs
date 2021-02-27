@@ -1,4 +1,4 @@
-﻿using ShapesApp.Models.Interfaces;
+﻿using ShapesApp.Controls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,19 +12,27 @@ namespace ShapesApp.Models
     /// </summary>
     class Circle : Shape
     {
-        public Circle(IDrawStrategy drawStrategy)
-        {
-            DrawStrategy = drawStrategy;
-        }
-
         /// <summary>
         /// Высота
         /// </summary>
-        public double Height { get; set; }
+        public double Height { get; set; } = 100;
 
         /// <summary>
         /// Ширина
         /// </summary>
-        public double Width { get; set; }
+        public double Width { get; set; } = 100;
+
+        public override object CreateDrawableObject()
+        {
+            var control = new CircleControl();
+
+            control.circle.Height = Height;
+            control.circle.Width = Width;
+            control.circle.Stroke = Stroke;
+            control.circle.Fill = BackgroundColor;
+            control.circle.StrokeThickness = StrokeThickness;
+
+            return control;
+        }
     }
 }

@@ -1,10 +1,10 @@
-﻿using ShapesApp.Models.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Ink;
+using System.Windows;
+using System.Windows.Media;
 
 namespace ShapesApp.Models
 {
@@ -14,26 +14,25 @@ namespace ShapesApp.Models
     public abstract class Shape
     {
         /// <summary>
-        /// Объект стратегии отрисовки фигуры
+        /// Цвет фона фигуры
         /// </summary>
-        protected IDrawStrategy DrawStrategy { get; set; }
+        public Brush BackgroundColor { get; set; } = Brushes.AliceBlue;
 
         /// <summary>
         /// Цвет линии контура
         /// </summary>
-        public Stroke Stroke { get; set; }
+        public Brush Stroke { get; set; } = Brushes.Black;
 
         /// <summary>
         /// Толщина линии контура
         /// </summary>
-        public double StrokeThickness { get; set; }
+        public double StrokeThickness { get; set; } = 2;
 
         /// <summary>
-        /// Метод для отрисовки фигуры
+        /// Координаты фигуры
         /// </summary>
-        public void Draw() 
-        {
-            DrawStrategy.Draw();
-        }
+        public Point Point { get; set; }
+
+        public abstract object CreateDrawableObject();
     }
 }

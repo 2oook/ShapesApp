@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShapesApp.Infrastructure;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,20 @@ namespace ShapesApp
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private IEditor editor;
+        /// <summary>
+        /// Ссылка на объект редактора
+        /// </summary>
+        public IEditor Editor
+        {
+            get { return editor; }
+            set 
+            {
+                value.Canvas = canvas; 
+                editor = value;
+            }
         }
     }
 }

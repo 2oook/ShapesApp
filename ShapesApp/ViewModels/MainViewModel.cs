@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Command;
+using ShapesApp.Infrastructure;
 using ShapesApp.Models;
 using ShapesApp.Models.Creators;
 using System;
@@ -11,6 +12,9 @@ using System.Windows.Input;
 
 namespace ShapesApp.ViewModels
 {
+    /// <summary>
+    /// Главная модель представления
+    /// </summary>
     class MainViewModel : INotifyPropertyChanged
     {
         public MainViewModel()
@@ -18,17 +22,10 @@ namespace ShapesApp.ViewModels
             InitializeCommands();
         }
 
-        private string progressState = string.Empty;
-
-        public string ProgressState
-        {
-            get { return progressState; }
-            set
-            {
-                progressState = value;
-                RaisePropertyChanged(nameof(ProgressState));
-            }
-        }
+        /// <summary>
+        /// Ссылка на объект редактора
+        /// </summary>
+        public IEditor Editor { get; set; }
 
         private ICommand showShapesCommand;
         /// <summary>
@@ -61,18 +58,16 @@ namespace ShapesApp.ViewModels
             var rectangleCreator = new RectangleCreator();
             var triangleCreator = new TriangleCreator();
 
-            var drawStrategy = new ConcreteDrawStrategy();
-
             var shapes = new List<Shape>()
             {
-                circleCreator.CreateShape(drawStrategy),
-                rectangleCreator.CreateShape(drawStrategy),
-                triangleCreator.CreateShape(drawStrategy)
+                circleCreator.CreateShape(10, 20),
+                rectangleCreator.CreateShape(150, 50),
+                triangleCreator.CreateShape(290,40)
             };
 
             foreach (var shape in shapes)
             {
-                shape.Draw();
+                Editor.DrawShape(shape);
             }
         }
 

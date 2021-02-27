@@ -1,9 +1,9 @@
-﻿using ShapesApp.Models.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ShapesApp.Models.Creators
 {
@@ -16,9 +16,9 @@ namespace ShapesApp.Models.Creators
         /// Метод для создания окружности
         /// </summary>
         /// <returns>Объект окружности</returns>
-        public override Shape CreateShape(IDrawStrategy drawStrategy)
+        public override Shape CreateShape(double x, double y)
         {
-            return new Circle(drawStrategy);
+            return new Circle() { Point = new Point() { X = x, Y = y } };
         }
     }
 }
