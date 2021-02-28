@@ -21,6 +21,8 @@ namespace ShapesApp.Models.Creators
         /// <summary>
         /// Метод для создания прямоугольника
         /// </summary>
+        /// <param name="x">Координата x фигуры</param>
+        /// <param name="y">Координата y фигуры</param>
         /// <returns>Объект прямоугольника</returns>
         public override Shape CreateShape(double x, double y)
         {

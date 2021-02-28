@@ -59,7 +59,7 @@ namespace ShapesApp.ViewModels
             {
                 circleCreator.CreateShape(10, 20),
                 rectangleCreator.CreateShape(150, 50),
-                triangleCreator.CreateShape(370,40)
+                triangleCreator.CreateShape(390,80)
             };
 
             foreach (var shape in shapes)

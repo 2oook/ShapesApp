@@ -7,6 +7,10 @@ namespace ShapesApp.Models
     /// </summary>
     public class Circle : Shape
     {
+        /// <summary>
+        /// Конструктор объекта окружности
+        /// </summary>
+        /// <param name="_circleDrawStrategy">Стратегия отображения окружности</param>
         public Circle(ICircleDrawStrategy _circleDrawStrategy)
         {
             circleDrawStrategy = _circleDrawStrategy;

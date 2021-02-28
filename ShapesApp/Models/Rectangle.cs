@@ -7,6 +7,10 @@ namespace ShapesApp.Models
     /// </summary>
     public class Rectangle : Shape
     {
+        /// <summary>
+        /// Конструктор объекта прямоугольника
+        /// </summary>
+        /// <param name="_rectangleDrawStrategy">Стратегия отображения прямоугольника</param>
         public Rectangle(IRectangleDrawStrategy _rectangleDrawStrategy)
         {
             rectangleDrawStrategy = _rectangleDrawStrategy;

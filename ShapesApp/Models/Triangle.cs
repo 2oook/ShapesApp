@@ -9,6 +9,10 @@ namespace ShapesApp.Models
     /// </summary>
     public class Triangle : Shape
     {
+        /// <summary>
+        /// Конструктор объекта треугольника
+        /// </summary>
+        /// <param name="_triangleDrawStrategy">Стратегия отображения треугольника</param>
         public Triangle(ITriangleDrawStrategy _triangleDrawStrategy)
         {
             triangleDrawStrategy = _triangleDrawStrategy;
